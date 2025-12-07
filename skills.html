@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills | Ihsan Ahmed</title>
+  <style>
+    :root {
+      --maroon: #6a1b2f;
+      --cream: #f5e9da;
+      --light-pink: #f7cad0;
+      --bubble-border: rgba(245, 233, 218, 0.3);
+      --bubble-shadow: rgba(245, 233, 218, 0.2);
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: var(--maroon);
+      color: var(--cream);
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      margin-top: 2rem;
+      color: var(--cream);
+      text-shadow: 0 0 10px var(--light-pink);
+    }
+
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 2rem;
+      gap: 1.5rem;
+    }
+
+    .bubble {
+      background: rgba(245, 233, 218, 0.1);
+      border: 1px solid var(--bubble-border);
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: 500;
+      color: var(--maroon);
+      box-shadow: 0 0 20px var(--bubble-shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .bubble:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 30px var(--light-pink);
+    }
+
+    .category {
+      margin-top: 2rem;
+      font-size: 1.3rem;
+      color: var(--cream);
+      text-shadow: 0 0 10px var(--light-pink);
+    }
+
+    footer {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: var(--light-pink);
+    }
+  </style>
+</head>
+<body>
+  <h1>My Skills 🌙</h1>
+
+  <div class="category">🗺️ GIS & Mapping</div>
+  <div class="skills-container">
+    <div class="bubble">ArcGIS Pro</div>
+    <div class="bubble">StoryMaps</div>
+    <div class="bubble">Map Design</div>
+    <div class="bubble">QGIS</div>
+  </div>
+
+  <div class="category">🛰️ Remote Sensing</div>
+  <div class="skills-container">
+    <div class="bubble">Raster Analysis</div>
+    <div class="bubble">NDVI</div>
+    <div class="bubble">Change Detection</div>
+  </div>
+
+  <div class="category">💻 Technical</div>
+  <div class="skills-container">
+    <div class="bubble">Python</div>
+    <div class="bubble">SQL</div>
+    <div class="bubble">GitHub</div>
+  </div>
+
+  <div class="category">🌱 Soft Skills</div>
+  <div class="skills-container">
+    <div class="bubble">Teamwork</div>
+    <div class="bubble">Research</div>
+    <div class="bubble">Community Impact</div>
+  </div>
+
+  <footer>© 2025 Ihsan Ahmed — Made under moonlight 🌕</footer>
+</body>
+</html>
