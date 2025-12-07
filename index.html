@@ -1,204 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Idiatou Diallo | Portfolio</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-  <style>
-    /* COLORS */
-    :root {
-      --maroon: #6a1b2f;
-      --cream: #f5e9da;
-      --light-pink: #f7cad0;
-    }
-
-    body {
-      margin: 0;
-      font-family: "Poppins", sans-serif;
-      background-color: var(--maroon);
-      color: var(--cream);
-      overflow-x: hidden;
-    }
-
-    /* NAVIGATION BAR */
-    .navbar {
-      width: 100%;
-      background-color: var(--light-pink);
-      padding: 15px 0;
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    .navbar a {
-      color: var(--maroon);
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-
-    .navbar a:hover {
-      color: var(--cream);
-    }
-
-    /* HEADER */
-    header {
-      text-align: center;
-      padding: 80px 20px;
-      background-color: var(--cream);
-      color: var(--maroon);
-      position: relative;
-      overflow: hidden;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      margin: 0;
-    }
-
-    header p {
-      margin-top: 10px;
-      font-size: 1.2rem;
-      opacity: 0.9;
-    }
-
-    /* FLOATING ICONS */
-    .floating-icons span {
-      position: absolute;
-      font-size: 2rem;
-      animation: float 6s infinite ease-in-out;
-    }
-
-    .floating-icons .moon { left: 10%; animation-delay: 0s; }
-    .floating-icons .leaf { left: 50%; animation-delay: 2s; }
-    .floating-icons .moon:last-child { left: 80%; animation-delay: 4s; }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-20px); }
-    }
-
-    /* PROJECT CARDS */
-    .project-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      padding: 40px 20px;
-    }
-
-    .project-card {
-      background-color: var(--cream);
-      color: var(--maroon);
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      width: 250px;
-      text-align: center;
-      padding: 20px;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .project-card:hover {
-      transform: translateY(-10px) rotate(-1deg);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    }
-
-    .project-card img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 15px;
-    }
-
-    /* MAP SECTION */
-    #moon-tide-map {
-      padding: 50px 20px;
-      text-align: center;
-      color: var(--cream);
-    }
-
-    #map {
-      height: 400px;
-      width: 90%;
-      max-width: 800px;
-      margin: 20px auto;
-      border-radius: 15px;
-      background-color: var(--cream);
-    }
-
-    #time-slider {
-      width: 80%;
-      max-width: 500px;
-      margin: 20px 0;
-    }
-
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ihsan Ahmed | Portfolio</title>
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 <body>
-  <nav class="navbar">
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<nav class="navbar">
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="skills.html">Skills</a>
+<a href="contact.html">Contact</a>
+</nav>
 
-  <header>
-    <h1>Ihsan Ahmed</h1>
-    <p>GIS • Remote Sensing • Creative Coding</p>
-    <div class="floating-icons">
-      <span class="moon">🌙</span>
-      <span class="leaf">🌿</span>
-      <span class="moon">🌙</span>
-    </div>
-  </header>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project-grid">
-      <div class="project-card">
-        <img src="images/placeholder.png" alt="Green Space">
-        <h3>Accessible Green Space 🌿</h3>
-        <p>Mapping urban green space accessibility with GIS.</p>
-      </div>
-      <div class="project-card">
-        <img src="images/placeholder.png" alt="Moon & Tide">
-        <h3>Moon & Tide 🌊🌙</h3>
-        <p>Analyzing tidal patterns and lunar phases using satellite imagery.</p>
-      </div>
-    </div>
-  </section>
+<header>
+<h1>Ihsan Ahmed</h1>
+<p>GIS • Remote Sensing • Creative Coding</p>
+<div class="floating-icons">
+<span class="moon">🌙</span>
+<span class="leaf">🌿</span>
+<span class="moon">🌙</span>
+</div>
+</header>
 
-  <section id="moon-tide-map">
-    <h2>Moon & Tide Slider Map (Placeholder)</h2>
-    <div id="map"></div>
-    <input type="range" id="time-slider" min="0" max="10" value="0">
-  </section>
 
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <script>
-    // Initialize Leaflet map
-    function initMap() {
-      const map = L.map('map').setView([40.7128, -74.0060], 12);
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap contributors'
-      }).addTo(map);
+<section id="projects">
+<h2>Projects</h2>
+<div class="project-grid">
+<div class="project-card">
+<img src="images/placeholder.png" alt="Green Space">
+<h3>Accessible Green Space 🌿</h3>
+<p>Mapping urban green space accessibility with GIS.</p>
+</div>
+<div class="project-card">
+<img src="images/placeholder.png" alt="Moon & Tide">
+<h3>Moon & Tide 🌊🌙</h3>
+<p>Analyzing tidal patterns and lunar phases using satellite imagery.</p>
+</div>
+</div>
+</section>
 
-      L.marker([40.7128, -74.0060]).addTo(map)
-        .bindPopup('Moon & Tide Map Placeholder 🌊🌙')
-        .openPopup();
-    }
 
-    // Time-slider placeholder interaction
-    const slider = document.getElementById('time-slider');
-    slider.addEventListener('input', (e) => {
-      const val = e.target.value;
-      console.log(`Slider moved to: ${val}`);
-      // Later: update map layer for moon/tide data
-    });
+<section id="moon-tide-map">
+<h2>Moon & Tide Slider Map (Placeholder)</h2>
+<div id="map"></div>
+<input type="range" id="time-slider" min="0" max="10" value="0">
+</section>
 
-    initMap();
-  </script>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
