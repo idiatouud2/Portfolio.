@@ -1,0 +1,70 @@
+:root {
+position: sticky;
+top: 0;
+z-index: 10;
+}
+
+
+.navbar a {
+color: var(--maroon);
+text-decoration: none;
+font-weight: 600;
+transition: color 0.3s;
+}
+
+
+.navbar a:hover { color: var(--cream); }
+
+
+header {
+text-align: center;
+padding: 80px 20px;
+background-color: var(--cream);
+color: var(--maroon);
+position: relative;
+overflow: hidden;
+}
+
+
+header h1 { font-size: 3rem; margin: 0; }
+header p { margin-top: 10px; font-size: 1.2rem; opacity: 0.9; }
+
+
+.floating-icons span {
+position: absolute; font-size: 2rem;
+animation: float 6s infinite ease-in-out;
+}
+.floating-icons .moon { left: 10%; animation-delay: 0s; }
+.floating-icons .leaf { left: 50%; animation-delay: 2s; }
+.floating-icons .moon:last-child { left: 80%; animation-delay: 4s; }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+
+
+.project-grid {
+display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 40px 20px;
+}
+.project-card {
+background-color: var(--cream); color: var(--maroon);
+border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+width: 250px; text-align: center; padding: 20px;
+transition: transform 0.3s, box-shadow 0.3s;
+}
+.project-card:hover { transform: translateY(-10px) rotate(-1deg); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+.project-card img { width: 100%; border-radius: 10px; margin-bottom: 15px; }
+
+
+#moon-tide-map { padding: 50px 20px; text-align: center; color: var(--cream); }
+#map { height: 400px; width: 90%; max-width: 800px; margin: 20px auto; border-radius: 15px; background-color: var(--cream); }
+#time-slider { width: 80%; max-width: 500px; margin: 20px 0; }
+
+
+.skills-container { display: flex; flex-wrap: wrap; justify-content: center; padding: 2rem; gap: 1.5rem; }
+.bubble {
+background: rgba(245, 233, 218, 0.1); border: 1px solid var(--bubble-border); border-radius: 50%;
+width: 150px; height: 150px; display: flex; align-items: center; justify-content: center;
+font-weight: 500; color: var(--maroon); box-shadow: 0 0 20px var(--bubble-shadow);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.bubble:hover { transform: scale(1.1); box-shadow: 0 0 30px var(--light-pink); }
+.category { margin-top: 2rem; font-size: 1.3rem; color: var(--cream); text-shadow: 0 0 10px var(--light-pink); }
+footer { margin-top: 2rem; font-size: 0.8rem; color: var(--light-pink); }
